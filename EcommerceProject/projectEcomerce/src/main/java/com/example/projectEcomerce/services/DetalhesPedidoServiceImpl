@@ -1,0 +1,72 @@
+@Service("detalhesPedidoService")
+
+public class DetalhesPedidoServiceImpl implements DetalhesPedidoService {
+
+
+    @Autowired
+
+    DetalhesPedidoRepository DetalhesPedidoRepository;
+
+
+    @Override
+
+    public Optional<DetalhesPedido> getDetalhesPedidoById(Integer id) {
+
+        return detalhesPedidoRepository.findById(id);
+
+    }
+
+
+    @Override
+
+    public List<DetalhesPedido> getAllDetalhesPedido() {
+
+        return detalhesPedidoRepository.findAll();
+
+    }
+
+
+    @Override
+
+    public void deleteAllDetalhesPedido() {
+
+        detalhesPedidoRepository.deleteAll();
+
+    }
+
+
+    @Override
+
+    public void deleteDetalhesPedidoById(Integer id) {
+
+        detalhesPedidoRepository.deleteById(id);
+
+    }
+
+
+    @Override
+
+    public void updateDetalhesPedido(DetalhesPedido detalhesPedido) {
+
+        if (aluno.getId() != null) {
+
+            detalhesPedidoRepository.save(detalhesPedido);
+
+        }
+
+    }
+
+
+    @Override
+
+    public void insertDetalhesPedido(DetalhesPedido detalhesPedido) {
+
+        if (detalhesPedido.getId() == null) {
+
+            detalhesPedidoRepository.save(detalhesPedido);
+
+        }
+
+    }
+
+}

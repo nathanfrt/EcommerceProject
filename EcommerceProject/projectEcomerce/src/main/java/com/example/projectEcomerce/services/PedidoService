@@ -1,0 +1,15 @@
+Pagamentopublic interface PedidoService {
+
+    Optional<Pedido> getPedidoById(Integer id);
+
+    List<Pagamento> getAllPedidos();
+
+    void deleteAllPedidos();
+
+    void deletePedidoById(Integer id);
+
+    void updatePedido(Pedido pedido);
+
+    void insertPedido(Pedido pedido);
+
+}

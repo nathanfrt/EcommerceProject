@@ -1,0 +1,40 @@
+@Service("ItensService")
+
+public class IntensServiceImpl implements ItensService {
+    @Autowired
+    ItensRepository itensRepository;
+
+    @Override
+    public Optional<Itens> getItensById(Integer id) {
+        return itensRepository.findById(id);
+    }
+
+    @Override
+    public List<Itens> getAllItens() {
+        return itensRepository.findAll();
+    }
+
+    @Override
+    public void deleteAllItens() {
+        itensRepository.deleteAll();
+    }
+
+    @Override
+    public void deleteItensById(Integer id) {
+        itensRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateItens(Itens itens) {
+        if (itens.getId() != null) {
+            itensRepository.save(itens);
+        }
+    }
+
+    @Override
+    public void insertItens(Itens itens) {
+        if (itens.getId() == null) {
+            itensRepository.save(itens);
+        }
+    }
+}

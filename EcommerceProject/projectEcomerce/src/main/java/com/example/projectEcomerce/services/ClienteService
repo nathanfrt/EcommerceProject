@@ -1,0 +1,15 @@
+public interface ClienteService {
+
+    Optional<Cliente> getClienteById(Integer id);
+
+    List<Cliente> getAllClientes();
+
+    void deleteAllClientes();
+
+    void deleteClienteById(Integer id);
+
+    void updateCliente(Cliente cliente);
+
+    void insertCliente(Cliente cliente);
+
+}

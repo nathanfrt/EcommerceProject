@@ -1,0 +1,15 @@
+Pagamentopublic interface ProdutoService {
+
+    Optional<Produto> getProdutoById(Integer id);
+
+    List<Produto> getAllProdutos();
+
+    void deleteAllProdutos();
+
+    void deleteProdutoById(Integer id);
+
+    void updateProduto(Produto produto);
+
+    void insertProduto(Produto produto);
+
+}

@@ -1,0 +1,5 @@
+@Repository("detalhesPedidoRepository")
+
+public interface DetalhesPedidoRepository extends JpaRepository<DetalhesPedido, Integer> {
+
+}

@@ -1,0 +1,34 @@
+@Service("usuarioService")
+
+public class UsuarioServiceImpl implements UsuarioService {
+
+    @Autowired   UsuarioRepository UsuarioRepository;
+
+    @Override   public Optional<Usuario> getUsuarioById(Integer id) {
+        return usuarioRepository.findById(id);
+    }
+
+    @Override   public List<Usuario> getAllUsuarios() {
+        return usuarioRepository.findAll();
+    }
+
+    @Override   public void deleteAllUsuarios() {
+        usuarioRepository.deleteAll();
+    }
+
+    @Override   public void deleteUsuarioById(Integer id) {
+        usuarioRepository.deleteById(id);
+    }
+
+    @Override   public void updateUsuario(Usuario usuario) {
+        if (usuario.getId() != null) {
+            usuarioRepository.save(usuario);
+        }
+    }
+
+    @Override   public void insertUsuario(Usuario usuario) {
+        if (usuario.getId() == null) {
+            usuarioRepository.save(usuario);
+        }
+    }
+}

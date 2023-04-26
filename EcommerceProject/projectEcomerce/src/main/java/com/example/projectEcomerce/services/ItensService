@@ -1,0 +1,15 @@
+public interface ItensService {
+
+    Optional<Itens> getItensById(Integer id);
+
+    List<Itens> getAllItenss();
+
+    void deleteAllItenss();
+
+    void deleteItensById(Integer id);
+
+    void updateItens(Itens itens);
+
+    void insertItens(Itens itens);
+
+}

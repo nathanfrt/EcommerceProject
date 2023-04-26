@@ -1,0 +1,38 @@
+@Service("EnvioService")public class EnvioServiceImpl implements EnvioService {
+
+    @Autowired
+    EnvioRepository EnvioRepository;
+
+    @Override
+    public Optional<Envio> getEnvioById(Integer id) {
+        return envioRepository.findById(id);
+    }
+
+    @Override
+    public List<Usuario> getAllEnvios() {
+        return envioRepository.findAll();
+    }
+
+    @Override
+    public void deleteAllEnvios() {
+        envioRepository.deleteAll();
+    }
+
+    @Override
+    public void deleteEnvioById(Integer id) {
+        envioRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateEnvio(Envio envio) {
+        if (envio.getId() != null) {
+            envioRepository.save(usuario);
+        }
+    }
+    @Override
+    public void insertEnvio(Envio envio) {
+        if (envio.getId() == null) {
+            envioRepository.save(envio);
+        }
+    }
+}

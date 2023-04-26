@@ -1,0 +1,15 @@
+Pagamentopublic interface UsuarioService {
+
+    Optional<Usuario> getUsuarioById(Integer id);
+
+    List<Usuario> getAllUsuarios();
+
+    void deleteAllUsuarios();
+
+    void deleteUsuarioById(Integer id);
+
+    void updateUsuario(Usuario usuario);
+
+    void insertUsuario(Usuario usuario);
+
+}

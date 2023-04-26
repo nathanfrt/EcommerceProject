@@ -1,0 +1,5 @@
+@Repository("usuarioRepository")
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+}

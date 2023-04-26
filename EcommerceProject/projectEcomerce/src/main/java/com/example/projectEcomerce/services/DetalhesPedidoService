@@ -1,0 +1,15 @@
+public interface DetalhesPedidoService {
+
+    Optional<DetalhesPedido> getDetalhesPedidoById(Integer id);
+
+    List<DetalhesPedido> getAllDetalhesPedidos();
+
+    void deleteAllDetalhesPedidos();
+
+    void deleteDetalhesPedidoById(Integer id);
+
+    void updateDetalhesPedido(DetalhesPedido detalhesPedido);
+
+    void insertDetalhesPedido(DetalhesPedido detalhesPedido);
+
+}

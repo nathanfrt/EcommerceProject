@@ -1,0 +1,15 @@
+public interface EnvioService {
+
+    Optional<Envio> getEnvioById(Integer id);
+
+    List<Envio> getAllEnvios();
+
+    void deleteAllEnvios();
+
+    void deleteEnvioById(Integer id);
+
+    void updateEnvio(Envio envio);
+
+    void insertEnvio(Envio envio);
+
+}

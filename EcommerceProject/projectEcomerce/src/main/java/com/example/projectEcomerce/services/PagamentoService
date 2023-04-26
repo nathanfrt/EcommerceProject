@@ -1,0 +1,15 @@
+public interface PagamentoService {
+
+    Optional<Pagamento> getPagamentoById(Integer id);
+
+    List<Pagamento> getAllPagamentos();
+
+    void deleteAllPagamentos();
+
+    void deletePagamentoById(Integer id);
+
+    void updatePagamento(Pagamento pagamento);
+
+    void insertPagamento(Pagamento pagamento);
+
+}

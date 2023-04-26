@@ -1,0 +1,72 @@
+@Service("pagamentoService")
+
+public class PagamentoServiceImpl implements PagamentoService {
+
+
+    @Autowired
+
+    PagamentoRepository PagamentoRepository;
+
+
+    @Override
+
+    public Optional<Pagamento> getPagamentoById(Integer id) {
+
+        return pagamentoRepository.findById(id);
+
+    }
+
+
+    @Override
+
+    public List<Pagamento> getAllPagamento() {
+
+        return pagamentoRepository.findAll();
+
+    }
+
+
+    @Override
+
+    public void deleteAllPagamento() {
+
+        pagamentoRepository.deleteAll();
+
+    }
+
+
+    @Override
+
+    public void deletePagamentoById(Integer id) {
+
+        pagamentoRepository.deleteById(id);
+
+    }
+
+
+    @Override
+
+    public void updatePagamento(Pagamento pagamento) {
+
+        if (pagamento.getId() != null) {
+
+            pagamentoRepository.save(pagamento);
+
+        }
+
+    }
+
+
+    @Override
+
+    public void insertPagamento(Pagamento pagamento) {
+
+        if (pagamento.getId() == null) {
+
+            pagamentoRepository.save(pagamento);
+
+        }
+
+    }
+
+}

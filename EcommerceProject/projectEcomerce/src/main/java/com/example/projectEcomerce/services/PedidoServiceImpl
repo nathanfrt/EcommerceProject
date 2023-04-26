@@ -1,0 +1,40 @@
+@Service("pedidoService")
+
+public class PedidoServiceImpl implements PedidoService {
+    @Autowired
+    PedidoRepository pedidoRepository;
+
+    @Override
+    public Optional<Pedido> getPedidoById(Integer id) {
+        return pedidoRepository.findById(id);
+    }
+
+    @Override
+    public List<Pedido> getAllPedidos() {
+        return PedidoRepository.findAll();
+    }
+
+    @Override
+    public void deleteAllPedidos() {
+        pedidoRepository.deleteAll();
+    }
+
+    @Override
+    public void deletePedidoById(Integer id) {
+        pedidoRepository.deleteById(id);
+    }
+
+    @Override
+    public void updatePedido(Pedido pedido) {
+        if (pedido.getId() != null) {
+            pedidoRepository.save(pedido);
+        }
+    }
+
+    @Override
+    public void insertPedido(Pedido pedido) {
+        if (pedido.getId() == null) {
+            pedidoRepository.save(pedido);
+        }
+    }
+}

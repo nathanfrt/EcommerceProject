@@ -1,0 +1,5 @@
+@Repository("envioRepository")
+
+public interface EnvioRepository extends JpaRepository<Envio, Integer> {
+
+}
